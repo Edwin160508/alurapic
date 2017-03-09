@@ -1,0 +1,38 @@
+            <div class="jumbotron">
+                <h1 class="text-center">Alurapic</h1>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p ng-show="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+                    <form>
+                        <div class="input-group">                        
+                            <span class="input-group-btn">
+                                <a href="fotos/new" class="btn btn-primary" type="button">Nova foto</a>
+                            </span>                            
+                            <input ng-model="filtro.titulo" ng-model-options="{debouce: 500}" class="form-control" placeholder="filtrar pelo título" /> <!--Diretiva responsável para fazer databind bidirecional leitura e escrita-->                              
+                        </div>
+                    </form>          
+                </div><!-- fim col-md-12 -->
+            </div><!-- fim row -->
+
+            <div class="row">                
+                <meu-painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter:filtro" titulo="{{foto.titulo}}">
+                    <!--<img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">-->
+                    <minha-foto url="{{foto.url}}" titulo="{{foto.titulo}}"></minha-foto>
+                    <a href="fotos/edit/{{foto._id}}" class="btn btn-primary btn-block">Editar</a>
+                    <!--<button ng-click="remover(foto)"class="btn btn-danger btn-block">Remover</button>-->
+                    <meu-botao-perigo nome="Remover" acao="remover(foto)"></meu-botao-perigo>
+                </meu-painel>    
+            </div>
+
+            
+            <!-- antes de criar a diretiva meu painel
+            <div ng-repeat="foto in fotos" class="panel panel-default"><!--Diretiva Responsável para realizar foreach de um array que esta no controller-->
+            <!--<div class="panel-heading">
+                    <h3 class="panel-title">{{foto.titulo}}</h3>
+                </div>
+                <div class="panel-body">
+                    <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
+                </div>
+            </div><!-- fim panel -->

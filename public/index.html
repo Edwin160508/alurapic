@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="alurapic"><!--Diretiva responsável para carregar o modulo-->
+    <head>
+        <meta charset="UTF-8">
+        <base href="/" />
+        <meta name="viewport" content="width=device-width">
+        <title>Alurapic</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/efeitos.css">
+        <script type="text/javascript" src="js/lib/angular.min.js"></script>
+        <script type="text/javascript" src="js/lib/angular-animate.min.js"></script><!-- Animação css painel animado -->
+        <script type="text/javascript" src="js/lib/angular-route.min.js"></script><!-- Sistema de rotas html do angular permitindo inclução de htmls externos dentro da pagina index -->
+        <script type="text/javascript" src="js/lib/angular-resource.min.js"></script><!-- Torna meu angular independente adaptável para qualquer back-end -->
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/controllers/fotos-controller.js"></script>
+        <script type="text/javascript" src="js/controllers/foto-controller.js"></script>
+        <script type="text/javascript" src="js/controllers/grupos-controller.js"></script>
+        <!-- Diretivas -->
+        <script type="text/javascript" src="js/directives/minhas-diretivas.js"></script>
+        <!-- Servicos -->
+        <script type="text/javascript" src="js/services/meus-servicos.js"></script>
+    </head>
+    <body><!--Diretiva responsável para carregar os controllers-->
+        <div class="container">
+           <ng-view></ng-view>                                 
+        </div>       
+    </body>
+</html>
